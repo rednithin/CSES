@@ -1,3 +1,5 @@
+import math
+
 n = int(input())
 
 if n == 1:
@@ -7,9 +9,9 @@ elif n == 4:
 elif n < 4:
     print("NO SOLUTION")
 else:
-    half, offset = (n // 2, 0) if n % 2 == 0 else (n // 2 + 1, 1)
+    half = int(math.ceil(n/2))
     answer = []
-    for (a, b) in zip(range(1,half+1), range(half+1,n+offset+1)):
+    for (a, b) in zip(range(1,half+1), range(half+1,2*half+1)):
         answer.append(str(a))
         if b <= n:
             answer.append(str(b))
